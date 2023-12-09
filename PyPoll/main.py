@@ -5,7 +5,7 @@ import csv                                                          #import csv 
 
 csvpath=os.path.join('Resources','election_data.csv')               #source file and location in network folder
 
-output_folder = os.path.join('Analysis','election_results.txt')     #name of the output text file and location in network folder 
+output_folder = os.path.join('Anlysis','election_results.txt')     #name of the output text file and location in network folder 
 
 with open(csvpath) as csvfile, open(output_folder, "w") as output:
     csvreader=csv.reader(csvfile,delimiter=',')                     #csv reader specifies delimiter and variable that holds contents

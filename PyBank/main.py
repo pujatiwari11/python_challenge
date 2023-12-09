@@ -3,12 +3,13 @@
 import os                                                               #import os module to allow to create file paths accross operating systems
 import csv                                                              #import csv module for reading csv files
 
+#csvpath = "Resources/budget_data.csv"
 csvpath=os.path.join('Resources','budget_data.csv')       
                #source file and location in network folder
 
-output_folder = os.path.join('Analysis','financial_analysis.txt')      
+output_p = os.path.join('Anlysis','financial_analysis.txt')      
 
-with open(csvpath) as csvfile, open(output_folder, "w") as output:
+with open(csvpath) as csvfile :
     csvreader=csv.reader(csvfile,delimiter=',')                        
     csv_header=next(csvreader)                                          
 
@@ -64,6 +65,8 @@ with open(csvpath) as csvfile, open(output_folder, "w") as output:
     print()
     print(f"Greatest Decrease in Profits: {max_decrease_month} ({max_decrease_format}) ")       #print month with biggest decrease in profit/loss
 
+
+with open(output_p,"w") as output :       
     #Print output to "financial analysis.txt" file
     output.write("Financial Analysis\n")
     output.write("\n")
